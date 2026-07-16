@@ -71,7 +71,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let countdownTimer;
 
     const updateCountdown = () => {
-      const diff = weddingDate - new Date();
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      const isWeddingDay =
+        now.getFullYear() === weddingDate.getFullYear() &&
+        now.getMonth() === weddingDate.getMonth() &&
+        now.getDate() === weddingDate.getDate();
+
+      if (isWeddingDay) {
+        countdown.innerHTML = '<span class="countdown-today">É hoje! ✦</span>';
+        clearInterval(countdownTimer);
+        return;
+      }
 
       if (diff <= 0) {
         cdDays.textContent = "0";
