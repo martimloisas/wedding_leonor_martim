@@ -13,6 +13,7 @@
   --radius-sm: 6px;
   --shadow-soft: 0 4px 16px rgba(61, 50, 38, 0.08);
   --shadow-lift: 0 10px 24px rgba(61, 50, 38, 0.16);
+  --vh100: 100dvh;
 }
 
 * {
@@ -236,8 +237,7 @@ ul, ol {
     radial-gradient(circle at 50% 20%, rgba(184, 154, 111, 0.12), transparent 60%),
     var(--beige-bg);
   position: relative;
-  min-height: clamp(560px, 100vh, 920px);
-  min-height: clamp(560px, 100svh, 920px);
+  min-height: var(--vh100);
 }
 
 .hero-content {
@@ -737,8 +737,6 @@ ul, ol {
 
   .hero {
     padding-top: 120px;
-    min-height: clamp(560px, 100vh, 880px);
-    min-height: clamp(560px, 100svh, 880px);
   }
 
   .hero-content {

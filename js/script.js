@@ -6,6 +6,18 @@ if (window.location.hash) {
   history.replaceState(null, "", window.location.pathname + window.location.search);
 }
 
+// iOS Safari's svh/dvh units are unreliable across versions (the toolbar
+// show/hide transition can leave the hero taller than the visible screen).
+// Measuring window.innerHeight directly sidesteps that entirely.
+const setViewportHeight = () => {
+  if (window.innerHeight > 0) {
+    document.documentElement.style.setProperty("--vh100", window.innerHeight + "px");
+  }
+};
+setViewportHeight();
+window.addEventListener("resize", setViewportHeight);
+window.addEventListener("orientationchange", setViewportHeight);
+
 document.addEventListener("DOMContentLoaded", () => {
   window.scrollTo(0, 0);
 
