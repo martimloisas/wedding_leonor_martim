@@ -67,6 +67,10 @@ ul, ol {
   color: var(--ink);
 }
 
+.brand .amp {
+  margin: 0;
+}
+
 /* Hamburger */
 .hamburger {
   width: 32px;

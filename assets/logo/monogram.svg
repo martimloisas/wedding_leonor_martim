@@ -3,6 +3,6 @@
        Colors: ink #3d3226, tan-dark #8f7350 — matches the site palette.
        Background is transparent so it can be placed on any paper stock for print. -->
   <text x="120" y="90" text-anchor="middle" font-family="'Times New Roman', Times, serif" font-size="72" fill="#3d3226">
-    <tspan>L</tspan><tspan dx="6" font-style="italic" fill="#8f7350" font-size="60">&amp;</tspan><tspan dx="6">M</tspan>
+    <tspan>L</tspan><tspan dx="2" font-style="italic" fill="#8f7350" font-size="60">&amp;</tspan><tspan dx="2">M</tspan>
   </text>
 </svg>
