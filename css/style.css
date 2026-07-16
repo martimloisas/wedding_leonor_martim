@@ -584,7 +584,7 @@ ul, ol {
   align-items: center;
   gap: 9px;
   padding: 15px 24px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: var(--ink);
   color: var(--beige-bg);
   font-family: var(--font-serif);
