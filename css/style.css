@@ -236,8 +236,8 @@ ul, ol {
     radial-gradient(circle at 50% 20%, rgba(184, 154, 111, 0.12), transparent 60%),
     var(--beige-bg);
   position: relative;
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: clamp(560px, 100vh, 880px);
+  min-height: clamp(560px, 100svh, 880px);
 }
 
 .hero-content {
@@ -736,8 +736,8 @@ ul, ol {
 
   .hero {
     padding-top: 120px;
-    min-height: 100vh;
-    min-height: 100svh;
+    min-height: clamp(560px, 100vh, 880px);
+    min-height: clamp(560px, 100svh, 880px);
   }
 
   .hero-content {
