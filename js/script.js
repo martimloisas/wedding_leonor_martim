@@ -2,10 +2,12 @@ if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
+if (window.location.hash) {
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  if (!window.location.hash) {
-    window.scrollTo(0, 0);
-  }
+  window.scrollTo(0, 0);
 
   const hamburger = document.getElementById("menuToggle");
   const navOverlay = document.getElementById("navOverlay");
