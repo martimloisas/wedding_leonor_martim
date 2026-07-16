@@ -108,7 +108,10 @@ ul, ol {
 /* ===== Nav overlay ===== */
 .nav-overlay {
   position: fixed;
-  inset: 0;
+  top: 76px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: var(--beige-bg);
   display: flex;
   align-items: center;
@@ -593,6 +596,10 @@ ul, ol {
   .topbar {
     height: 64px;
     padding: 0 20px;
+  }
+
+  .nav-overlay {
+    top: 64px;
   }
 
   .brand {
