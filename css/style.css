@@ -314,6 +314,34 @@ ul, ol {
   margin: 0 auto;
 }
 
+.add-calendar {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 28px;
+  padding: 0 0 3px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--tan);
+  color: var(--tan-dark);
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.add-calendar svg {
+  width: 15px;
+  height: 15px;
+}
+
+.add-calendar:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
 .scroll-cue {
   position: absolute;
   left: 50%;

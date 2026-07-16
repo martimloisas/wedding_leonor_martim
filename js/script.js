@@ -103,6 +103,50 @@ document.addEventListener("DOMContentLoaded", () => {
     countdownTimer = setInterval(updateCountdown, 30000);
   }
 
+  // Add to calendar (.ics download)
+  const addToCalendarBtn = document.getElementById("addToCalendar");
+
+  if (addToCalendarBtn) {
+    addToCalendarBtn.addEventListener("click", () => {
+      const escapeIcsText = (text) => text.replace(/([,;])/g, "\\$1");
+
+      const dtStamp = new Date()
+        .toISOString()
+        .replace(/[-:]/g, "")
+        .split(".")[0] + "Z";
+
+      const icsLines = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Leonor e Martim//Casamento//PT",
+        "CALSCALE:GREGORIAN",
+        "BEGIN:VEVENT",
+        "UID:leonor-martim-casamento-2027@wedding",
+        `DTSTAMP:${dtStamp}`,
+        "DTSTART:20270710T150000Z",
+        "DTEND:20270711T040000Z",
+        "SUMMARY:Casamento de Leonor & Martim",
+        `DESCRIPTION:${escapeIcsText(
+          "Cerimónia às 16h na Igreja de Nossa Senhora da Conceição, seguida de festa na Quinta dos Rosais."
+        )}`,
+        `LOCATION:${escapeIcsText("Igreja de Nossa Senhora da Conceição / Quinta dos Rosais")}`,
+        "END:VEVENT",
+        "END:VCALENDAR",
+      ];
+
+      const icsBlob = new Blob([icsLines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
+      const icsUrl = URL.createObjectURL(icsBlob);
+
+      const tempLink = document.createElement("a");
+      tempLink.href = icsUrl;
+      tempLink.download = "casamento-leonor-martim.ics";
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+      URL.revokeObjectURL(icsUrl);
+    });
+  }
+
   // Copy IBAN
   const copyBtn = document.getElementById("copyIban");
   const ibanValue = document.getElementById("ibanValue");
