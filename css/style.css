@@ -893,6 +893,78 @@ ul, ol {
   }
 }
 
+/* Shorter windows (laptops with the browser not maximized, external
+   monitors, etc.) can still be wide, so the width-based breakpoints
+   above don't help. Compress the hero's vertical rhythm so the fixed
+   scroll cue never overlaps the invite signature. */
+@media (max-height: 820px) {
+  .hero {
+    padding-top: 96px;
+  }
+
+  .hero-content {
+    padding-bottom: 24px;
+  }
+
+  .names {
+    font-size: clamp(2.2rem, 5.5vh, 4.4rem);
+  }
+
+  .date {
+    margin: 4px 0 16px;
+  }
+
+  .countdown {
+    margin: 0 0 20px;
+  }
+
+  .invite-text {
+    font-size: 0.95rem;
+  }
+
+  .scroll-cue {
+    bottom: clamp(10px, 3vh, 24px);
+  }
+}
+
+/* Even shorter windows need a second, more aggressive compression pass. */
+@media (max-height: 680px) {
+  .hero {
+    padding-top: 72px;
+  }
+
+  .hero-content {
+    padding-bottom: 12px;
+  }
+
+  .names {
+    font-size: clamp(1.8rem, 4.2vh, 4.4rem);
+  }
+
+  .divider {
+    margin: 10px 0;
+  }
+
+  .date {
+    margin: 2px 0 10px;
+  }
+
+  .countdown {
+    margin: 0 0 12px;
+  }
+
+  .invite-text {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+
+  .scroll-cue {
+    padding: 10px 16px;
+    font-size: 1.2rem;
+    bottom: clamp(4px, 1.5vh, 12px);
+  }
+}
+
 /* Short viewports (mobile landscape) can be wider than the 780px
    breakpoint above but too short in height to fit the full nav list. */
 @media (max-height: 500px) {
@@ -920,10 +992,41 @@ ul, ol {
   }
 
   .hero {
-    padding-top: 80px;
+    padding-top: 44px;
+  }
+
+  .hero-content {
+    padding-bottom: 4px;
+  }
+
+  .names {
+    font-size: clamp(1.3rem, 3.2vh, 4.4rem);
+  }
+
+  .divider {
+    margin: 4px 0;
+  }
+
+  .date {
+    margin: 2px 0 6px;
+  }
+
+  .countdown {
+    margin: 0 0 6px;
+  }
+
+  .invite-text {
+    font-size: 0.72rem;
+    line-height: 1.25;
+  }
+
+  .invite-text br + br {
+    display: none;
   }
 
   .scroll-cue {
-    bottom: clamp(6px, 2vh, 16px);
+    padding: 8px 14px;
+    font-size: 1.1rem;
+    bottom: clamp(4px, 1.5vh, 10px);
   }
 }
