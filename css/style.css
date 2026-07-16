@@ -732,7 +732,8 @@ ul, ol {
 
   .section {
     padding: 100px 20px 70px;
-    min-height: unset;
+    min-height: 100vh;
+    min-height: 100svh;
   }
 
   .hero {
