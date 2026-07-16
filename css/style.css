@@ -145,7 +145,22 @@ ul, ol {
 
 .nav-overlay li {
   margin: 22px 0;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
+
+.nav-overlay.open li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-overlay.open li:nth-child(1) { transition-delay: 0.05s; }
+.nav-overlay.open li:nth-child(2) { transition-delay: 0.1s; }
+.nav-overlay.open li:nth-child(3) { transition-delay: 0.15s; }
+.nav-overlay.open li:nth-child(4) { transition-delay: 0.2s; }
+.nav-overlay.open li:nth-child(5) { transition-delay: 0.25s; }
+.nav-overlay.open li:nth-child(6) { transition-delay: 0.3s; }
 
 .nav-link {
   font-size: 1.8rem;
@@ -225,6 +240,45 @@ ul, ol {
   color: var(--ink-soft);
 }
 
+/* ===== Scroll reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item.reveal:nth-child(1) { transition-delay: 0.05s; }
+.timeline-item.reveal:nth-child(2) { transition-delay: 0.1s; }
+.timeline-item.reveal:nth-child(3) { transition-delay: 0.15s; }
+.timeline-item.reveal:nth-child(4) { transition-delay: 0.2s; }
+.timeline-item.reveal:nth-child(5) { transition-delay: 0.25s; }
+
+.map-card.reveal:nth-child(1) { transition-delay: 0.05s; }
+.map-card.reveal:nth-child(2) { transition-delay: 0.15s; }
+
+.stay-card.reveal:nth-child(1) { transition-delay: 0.05s; }
+.stay-card.reveal:nth-child(2) { transition-delay: 0.15s; }
+.stay-card.reveal:nth-child(3) { transition-delay: 0.25s; }
+
+.faq-topic.reveal:nth-child(1) { transition-delay: 0.05s; }
+.faq-topic.reveal:nth-child(2) { transition-delay: 0.1s; }
+.faq-topic.reveal:nth-child(3) { transition-delay: 0.15s; }
+.faq-topic.reveal:nth-child(4) { transition-delay: 0.2s; }
+.faq-topic.reveal:nth-child(5) { transition-delay: 0.25s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .divider {
   color: var(--tan);
   font-size: 1.1rem;
@@ -281,11 +335,27 @@ ul, ol {
 }
 
 .countdown-num {
+  display: inline-block;
   font-size: 1.4rem;
   color: var(--ink);
   font-variant-numeric: tabular-nums;
   min-width: 1.2em;
   text-align: right;
+}
+
+.countdown-num--flip {
+  animation: countdownFlip 0.4s ease;
+}
+
+@keyframes countdownFlip {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .countdown-label {
@@ -401,6 +471,7 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: var(--shadow-soft);
 }
 
 .timeline-icon svg {
@@ -557,7 +628,7 @@ ul, ol {
   margin-top: 30px;
   padding: 16px 44px;
   border: 1px solid var(--ink);
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   background: var(--ink);
   color: var(--beige-bg);
   letter-spacing: 1.5px;
@@ -689,7 +760,21 @@ ul, ol {
 }
 
 .faq-item {
-  border-bottom: 1px solid var(--line);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq-item.open {
+  box-shadow: var(--shadow-lift);
 }
 
 .faq-question {
@@ -700,7 +785,7 @@ ul, ol {
   font-family: var(--font-serif);
   font-size: 1.02rem;
   color: var(--ink);
-  padding: 18px 4px;
+  padding: 18px 22px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -734,7 +819,7 @@ ul, ol {
 }
 
 .faq-answer p {
-  margin: 0 4px 18px;
+  margin: 0 22px 20px;
   color: var(--ink-soft);
 }
 

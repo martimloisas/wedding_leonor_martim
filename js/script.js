@@ -69,6 +69,27 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   sections.forEach((section) => observer.observe(section));
 
+  // Scroll reveal
+  const revealEls = document.querySelectorAll(".reveal");
+  const prefersReducedMotionReveal = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (revealEls.length && !prefersReducedMotionReveal && "IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+    );
+    revealEls.forEach((el) => revealObserver.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("in-view"));
+  }
+
   // FAQ accordion
   document.querySelectorAll(".faq-item").forEach((item) => {
     const question = item.querySelector(".faq-question");
@@ -97,6 +118,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const cdDays = document.getElementById("cdDays");
     const cdHours = document.getElementById("cdHours");
     const cdMinutes = document.getElementById("cdMinutes");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const setCountdownValue = (el, value) => {
+      if (el.textContent === value) return;
+      el.textContent = value;
+      if (prefersReducedMotion) return;
+      el.classList.remove("countdown-num--flip");
+      void el.offsetWidth;
+      el.classList.add("countdown-num--flip");
+    };
 
     let countdownTimer;
 
@@ -116,17 +147,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (diff <= 0) {
-        cdDays.textContent = "0";
-        cdHours.textContent = "00";
-        cdMinutes.textContent = "00";
+        setCountdownValue(cdDays, "0");
+        setCountdownValue(cdHours, "00");
+        setCountdownValue(cdMinutes, "00");
         clearInterval(countdownTimer);
         return;
       }
 
       const totalMinutes = Math.floor(diff / 60000);
-      cdDays.textContent = Math.floor(totalMinutes / 1440);
-      cdHours.textContent = String(Math.floor((totalMinutes % 1440) / 60)).padStart(2, "0");
-      cdMinutes.textContent = String(totalMinutes % 60).padStart(2, "0");
+      setCountdownValue(cdDays, String(Math.floor(totalMinutes / 1440)));
+      setCountdownValue(cdHours, String(Math.floor((totalMinutes % 1440) / 60)).padStart(2, "0"));
+      setCountdownValue(cdMinutes, String(totalMinutes % 60).padStart(2, "0"));
     };
 
     updateCountdown();
