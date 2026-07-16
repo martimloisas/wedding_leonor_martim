@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Countdown to the ceremony
   const countdown = document.getElementById("countdown");
-  const weddingDate = new Date(2027, 6, 10, 16, 0, 0);
+  const weddingDate = new Date("2027-07-10T16:00:00");
 
   if (countdown) {
     const cdDays = document.getElementById("cdDays");
