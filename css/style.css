@@ -583,8 +583,8 @@ ul, ol {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  padding: 15px 24px;
-  border-radius: var(--radius-sm);
+  padding: 15px 26px;
+  border-radius: 999px;
   background: var(--ink);
   color: var(--beige-bg);
   font-family: var(--font-serif);
@@ -592,7 +592,7 @@ ul, ol {
   letter-spacing: 1.2px;
   text-transform: uppercase;
   box-shadow: var(--shadow-lift);
-  transition: transform 0.25s ease, background 0.25s ease, opacity 0.3s ease, visibility 0.3s;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease, visibility 0.3s;
 }
 
 .fab-rsvp svg {
@@ -603,7 +603,8 @@ ul, ol {
 
 .fab-rsvp:hover {
   background: var(--tan-dark);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(61, 50, 38, 0.22);
 }
 
 .fab-rsvp.hidden {
