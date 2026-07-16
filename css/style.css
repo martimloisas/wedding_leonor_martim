@@ -344,14 +344,25 @@ ul, ol {
 }
 
 .scroll-cue {
-  position: absolute;
+  position: fixed;
   left: 50%;
   bottom: clamp(28px, 8vh, 64px);
   transform: translateX(-50%);
   padding: 14px 22px;
   font-size: 1.4rem;
   color: var(--tan-dark);
+  background: rgba(246, 241, 231, 0.92);
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+  z-index: 150;
   animation: bounce 2.2s infinite;
+  transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.scroll-cue.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 @keyframes bounce {

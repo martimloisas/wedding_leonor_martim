@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll(".section[id]");
   const fabRsvp = document.getElementById("fabRsvp");
+  const scrollCue = document.getElementById("scrollCue");
 
   const closeMenu = () => {
     hamburger.classList.remove("active");
@@ -57,6 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
           });
           if (fabRsvp) {
             fabRsvp.classList.toggle("hidden", id === "inicio" || id === "confirmar");
+          }
+          if (scrollCue) {
+            scrollCue.classList.toggle("hidden", id !== "inicio");
           }
         }
       });
