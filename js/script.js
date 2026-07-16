@@ -59,6 +59,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Countdown to the ceremony
+  const countdown = document.getElementById("countdown");
+  const weddingDate = new Date(2027, 6, 10, 16, 0, 0);
+
+  if (countdown) {
+    const cdDays = document.getElementById("cdDays");
+    const cdHours = document.getElementById("cdHours");
+    const cdMinutes = document.getElementById("cdMinutes");
+
+    let countdownTimer;
+
+    const updateCountdown = () => {
+      const diff = weddingDate - new Date();
+
+      if (diff <= 0) {
+        countdown.innerHTML = '<span class="countdown-today">É hoje! ✦</span>';
+        clearInterval(countdownTimer);
+        return;
+      }
+
+      const totalMinutes = Math.floor(diff / 60000);
+      cdDays.textContent = Math.floor(totalMinutes / 1440);
+      cdHours.textContent = String(Math.floor((totalMinutes % 1440) / 60)).padStart(2, "0");
+      cdMinutes.textContent = String(totalMinutes % 60).padStart(2, "0");
+    };
+
+    updateCountdown();
+    countdownTimer = setInterval(updateCountdown, 30000);
+  }
+
   // Copy IBAN
   const copyBtn = document.getElementById("copyIban");
   const ibanValue = document.getElementById("ibanValue");

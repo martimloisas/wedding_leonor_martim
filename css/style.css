@@ -261,6 +261,48 @@ ul, ol {
   margin: 6px 0 30px;
 }
 
+.countdown {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 18px;
+  margin: 0 0 36px;
+}
+
+.countdown-unit {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.countdown-num {
+  font-size: 1.4rem;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  min-width: 1.2em;
+  text-align: right;
+}
+
+.countdown-label {
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.countdown-sep {
+  color: var(--tan);
+  font-size: 1rem;
+  transform: translateY(-2px);
+}
+
+.countdown-today {
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--tan-dark);
+}
+
 .invite-text {
   color: var(--ink-soft);
   font-size: 1.02rem;
