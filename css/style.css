@@ -745,6 +745,10 @@ ul, ol {
     padding-bottom: 48px;
   }
 
+  .scroll-cue {
+    bottom: clamp(8px, 2vh, 20px);
+  }
+
   .names {
     letter-spacing: 1px;
   }
