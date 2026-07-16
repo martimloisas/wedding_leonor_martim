@@ -1,10 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
-  <!-- Reusable monogram mark: L & M inside a thin circle frame.
-       Colors: ink #3d3226, tan-dark #8f7350, tan #b89a6f — matches the site palette.
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140">
+  <!-- Reusable monogram mark: L & M, no border.
+       Colors: ink #3d3226, tan-dark #8f7350 — matches the site palette.
        Background is transparent so it can be placed on any paper stock for print. -->
-  <circle cx="120" cy="120" r="108" fill="none" stroke="#b89a6f" stroke-width="1.5"/>
-  <circle cx="120" cy="120" r="98" fill="none" stroke="#b89a6f" stroke-width="0.75"/>
-  <text x="120" y="146" text-anchor="middle" font-family="'Times New Roman', Times, serif" font-size="72" fill="#3d3226">
+  <text x="120" y="90" text-anchor="middle" font-family="'Times New Roman', Times, serif" font-size="72" fill="#3d3226">
     <tspan>L</tspan><tspan dx="6" font-style="italic" fill="#8f7350" font-size="60">&amp;</tspan><tspan dx="6">M</tspan>
   </text>
 </svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- App/touch icon source (larger sizes): solid square badge, no border shapes. -->
+  <rect width="200" height="200" fill="#3d3226"/>
+  <text x="100" y="122" text-anchor="middle" font-family="'Times New Roman', Times, serif" font-size="62" fill="#f6f1e7">
+    <tspan>L</tspan><tspan dx="4" font-style="italic" fill="#c9ab7f" font-size="52">&amp;</tspan><tspan dx="4">M</tspan>
+  </text>
+</svg>
