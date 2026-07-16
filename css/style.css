@@ -563,6 +563,45 @@ ul, ol {
   box-shadow: var(--shadow-lift);
 }
 
+/* ===== Floating RSVP button ===== */
+.fab-rsvp {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 190;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 15px 24px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--beige-bg);
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-lift);
+  transition: transform 0.25s ease, background 0.25s ease, opacity 0.3s ease, visibility 0.3s;
+}
+
+.fab-rsvp svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.fab-rsvp:hover {
+  background: var(--tan-dark);
+  transform: translateY(-2px);
+}
+
+.fab-rsvp.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  pointer-events: none;
+}
+
 /* ===== Gift / IBAN ===== */
 .iban-box {
   margin: 34px auto 0;
@@ -711,6 +750,14 @@ ul, ol {
 
   .brand {
     font-size: 1.1rem;
+  }
+
+  .fab-rsvp {
+    right: 16px;
+    bottom: 16px;
+    padding: 13px 18px;
+    font-size: 0.72rem;
+    gap: 7px;
   }
 
   .hamburger {

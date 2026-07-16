@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navOverlay = document.getElementById("navOverlay");
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll(".section[id]");
+  const fabRsvp = document.getElementById("fabRsvp");
 
   const closeMenu = () => {
     hamburger.classList.remove("active");
@@ -54,6 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
           navLinks.forEach((link) => {
             link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
           });
+          if (fabRsvp) {
+            fabRsvp.classList.toggle("hidden", id === "inicio" || id === "confirmar");
+          }
         }
       });
     },
