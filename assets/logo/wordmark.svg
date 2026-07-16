@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320">
+  <!-- Reusable full wordmark lockup: "Leonor & Martim" + date, for invites, missals, stationery.
+       Background is transparent so it can be placed on any paper stock or digital background. -->
+  <text x="450" y="150" text-anchor="middle" font-family="'Times New Roman', Times, serif" font-size="92" fill="#3d3226">
+    <tspan>Leonor</tspan><tspan dx="22" font-style="italic" fill="#8f7350">&amp;</tspan><tspan dx="22">Martim</tspan>
+  </text>
+  <text x="450" y="195" text-anchor="middle" font-family="'Times New Roman', Times, serif" font-size="26" fill="#b89a6f">&#10022;</text>
+  <text x="450" y="245" text-anchor="middle" font-family="'Times New Roman', Times, serif" font-size="24" letter-spacing="4" fill="#8f7350">S&#193;BADO, 10 DE JULHO DE 2027</text>
+</svg>
