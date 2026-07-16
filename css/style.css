@@ -125,6 +125,7 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-12px);
@@ -831,5 +832,35 @@ ul, ol {
 
   .nav-link {
     font-size: 1.2rem;
+  }
+}
+
+/* Short viewports (mobile landscape) can be wider than the 780px
+   breakpoint above but too short in height to fit the full nav list. */
+@media (max-height: 500px) {
+  .topbar {
+    height: 56px;
+  }
+
+  .nav-overlay {
+    top: 56px;
+    align-items: flex-start;
+    padding: 28px 20px;
+  }
+
+  .nav-overlay li {
+    margin: 10px 0;
+  }
+
+  .nav-link {
+    font-size: 1.15rem;
+  }
+
+  .hero {
+    padding-top: 80px;
+  }
+
+  .scroll-cue {
+    bottom: clamp(6px, 2vh, 16px);
   }
 }
