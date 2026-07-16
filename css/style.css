@@ -845,15 +845,20 @@ ul, ol {
   .nav-overlay {
     top: 56px;
     align-items: flex-start;
-    padding: 28px 20px;
+    padding: 16px 20px;
+  }
+
+  .nav-overlay ul {
+    line-height: 1.2;
   }
 
   .nav-overlay li {
-    margin: 10px 0;
+    margin: 6px 0;
   }
 
   .nav-link {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
+    padding-bottom: 2px;
   }
 
   .hero {
