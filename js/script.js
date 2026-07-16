@@ -71,22 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let countdownTimer;
 
     const updateCountdown = () => {
-      const now = new Date();
-      const diff = weddingDate - now;
-
-      const isWeddingDay =
-        now.getFullYear() === weddingDate.getFullYear() &&
-        now.getMonth() === weddingDate.getMonth() &&
-        now.getDate() === weddingDate.getDate();
-
-      if (isWeddingDay) {
-        countdown.innerHTML = '<span class="countdown-today">É hoje! ✦</span>';
-        clearInterval(countdownTimer);
-        return;
-      }
+      const diff = weddingDate - new Date();
 
       if (diff <= 0) {
-        countdown.style.display = "none";
+        cdDays.textContent = "0";
+        cdHours.textContent = "00";
+        cdMinutes.textContent = "00";
         clearInterval(countdownTimer);
         return;
       }
