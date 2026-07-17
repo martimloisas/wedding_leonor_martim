@@ -648,27 +648,24 @@ ul, ol {
 /* ===== Floating RSVP button ===== */
 .fab-rsvp {
   position: fixed;
-  right: 26px;
-  bottom: 26px;
+  right: 24px;
+  bottom: 24px;
   z-index: 190;
-  display: inline-flex;
+  width: 52px;
+  height: 52px;
+  display: flex;
   align-items: center;
-  gap: 9px;
-  padding: 15px 26px;
-  border-radius: 999px;
+  justify-content: center;
+  border-radius: 50%;
   background: var(--ink);
   color: var(--beige-bg);
-  font-family: var(--font-serif);
-  font-size: 0.82rem;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
   box-shadow: var(--shadow-lift);
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease, visibility 0.3s;
 }
 
 .fab-rsvp svg {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
 }
 
@@ -852,9 +849,13 @@ ul, ol {
   .fab-rsvp {
     right: 16px;
     bottom: 16px;
-    padding: 13px 18px;
-    font-size: 0.72rem;
-    gap: 7px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .fab-rsvp svg {
+    width: 18px;
+    height: 18px;
   }
 
   .hamburger {
